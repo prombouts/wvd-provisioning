@@ -15,6 +15,6 @@ if (-not ([string]::IsNullOrEmpty($InstallSourceFsLogix)))
 
 if (-not ([string]::IsNullOrEmpty($InstallSourceABR)))
 {
-    Invoke-WebRequest -Uri $InstallSource -OutFile "C:\Install\abr_7_ws.msi"
+    Invoke-WebRequest -Uri $InstallSourceABR -OutFile "C:\Install\abr_7_ws.msi"
     Start-Process -Wait -FilePath "msiexec" -ArgumentList "/i C:\Install\abr_7_ws.msi /q" -PassThru
 }
